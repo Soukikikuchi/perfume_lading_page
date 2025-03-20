@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香水ショップ - 世界に一つだけの香り</title>
+    <style>
+        /* 全体のスタイル */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'MS Pゴシック', sans-serif;
+            color: #333;
+            background-color: #F8F3E6;
+            line-height: 1.6;
+        }
+        
+        /* カラースキーム */
+        :root {
+            --elegant-purple: #8A6BBE;
+            --soft-cream: #F8F3E6;
+            --gold: #D4AF37;
+            --deep-navy: #1A2C5B;
+            --light-lavender: #E6E6FA;
+            --soft-pink: #F7CAC9;
+        }
+        
+        /* ヒーローセクション */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--light-lavender) 0%, var(--elegant-purple) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('perfume_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-family: 'Yu Mincho', 'YuMincho', 'MS PMincho', serif;
+            font-size: 3.5rem;
+            color: var(--deep-navy);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--deep-navy);
+            margin-bottom: 2rem;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--deep-navy);
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .influencer-badge {
+            display: inline-block;
+            background-color: var(--gold);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .perfume-image {
+            position: absolute;
+            bottom: -50px;
+            right: 10%;
+            width: 300px;
+            height: auto;
+            z-index: 3;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+        }
+        
+        .influencer-image {
+            position: absolute;
+            bottom: -50px;
+            left: 10%;
+            width: 250px;
+            height: auto;
+            z-index: 3;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+            border-radius: 50%;
+        }
+        
+        .combination-counter {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            background-color: white;
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            z-index: 3;
+        }
+        
+        .counter-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--elegant-purple);
+        }
+        
+        .counter-text {
+            font-size: 0.9rem;
+            color: var(--deep-navy);
+            text-align: center;
+            padding: 0 10px;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .perfume-image, .influencer-image {
+                width: 150px;
+                position: relative;
+                margin: 1rem auto;
+                display: block;
+                left: auto;
+                right: auto;
+                bottom: auto;
+            }
+            
+            .combination-counter {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 2rem auto;
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="influencer-badge">有名インフルエンサー厳選</span>
+            <h1 class="hero-title">世界に一つだけの香り</h1>
+            <h2 class="hero-subtitle">66種類の香りから6種を選ぶ、9000万通りの可能性</h2>
+            <p class="hero-description">あなただけの物語を紡ぐ特別な香りを。有名インフルエンサーが厳選した貴重な香りで、日常に特別な瞬間を。</p>
+            <a href="#create" class="cta-button">あなただけの香りを作る</a>
+        </div>
+        
+        <div class="combination-counter">
+            <div class="counter-number">9000万</div>
+            <div class="counter-text">通りの組み合わせから、あなただけの香りを</div>
+        </div>
+        
+        <!-- 画像はプレースホルダーとして表示 -->
+        <img src="perfume_bottle.png" alt="香水ボトル" class="perfume-image">
+        <img src="influencer.jpg" alt="インフルエンサー" class="influencer-image">
+    </section>
+</body>
+</html>

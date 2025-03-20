@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香水ショップ - CTAセクション</title>
+    <style>
+        /* 全体のスタイル */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'MS Pゴシック', sans-serif;
+            color: #333;
+            background-color: #F8F3E6;
+            line-height: 1.6;
+        }
+        
+        /* カラースキーム */
+        :root {
+            --elegant-purple: #8A6BBE;
+            --soft-cream: #F8F3E6;
+            --gold: #D4AF37;
+            --deep-navy: #1A2C5B;
+            --light-lavender: #E6E6FA;
+            --soft-pink: #F7CAC9;
+        }
+        
+        /* CTAセクション */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--elegant-purple) 0%, var(--deep-navy) 100%);
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            font-family: 'Yu Mincho', 'YuMincho', 'MS PMincho', serif;
+            font-size: 2.5rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+            margin: 15px auto 0;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .cta-text {
+            flex: 0 0 calc(50% - 25px);
+        }
+        
+        .cta-heading {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .cta-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-features {
+            margin-bottom: 30px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background-color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon img {
+            width: 15px;
+            height: 15px;
+        }
+        
+        .feature-text {
+            font-size: 1.1rem;
+        }
+        
+        .cta-form {
+            flex: 0 0 calc(50% - 25px);
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-title {
+            font-size: 1.5rem;
+            color: var(--deep-navy);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 1rem;
+            color: var(--deep-navy);
+            margin-bottom: 8px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: var(--elegant-purple);
+            box-shadow: 0 0 0 2px rgba(138, 107, 190, 0.2);
+            outline: none;
+        }
+        
+        .form-submit {
+            display: block;
+            width: 100%;
+            background-color: var(--gold);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            margin-top: 30px;
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .limited-offer {
+            display: inline-block;
+            background-color: var(--gold);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .price-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .original-price {
+            font-size: 1.2rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 15px;
+        }
+        
+        .current-price {
+            font-size: 2rem;
+            color: var(--deep-navy);
+            font-weight: bold;
+        }
+        
+        .guarantee-text {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .floating-perfume {
+            position: absolute;
+            width: 200px;
+            height: auto;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .perfume-1 {
+            top: 10%;
+            left: 5%;
+            transform: rotate(-15deg);
+        }
+        
+        .perfume-2 {
+            bottom: 10%;
+            right: 5%;
+            transform: rotate(15deg);
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 992px) {
+            .cta-text,
+            .cta-form {
+                flex: 0 0 100%;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-heading {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-form {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="cta-section" id="create">
+        <img src="perfume-bottle.png" alt="香水ボトル" class="floating-perfume perfume-1">
+        <img src="perfume-bottle.png" alt="香水ボトル" class="floating-perfume perfume-2">
+        
+        <div class="container">
+            <h2 class="section-title">あなただけの香りを手に入れる</h2>
+            <p class="section-subtitle">66種類の香りから6種を選び、9000万通りの中からあなただけの特別な香水を作ります。</p>
+            
+            <div class="cta-content">
+                <div class="cta-text">
+                    <span class="limited-offer">期間限定オファー</span>
+                    <h3 class="cta-heading">インフルエンサー厳選の香りで、あなただけの物語を紡ぐ</h3>
+                    <p class="cta-description">
+                        有名インフルエンサーが厳選した貴重な香りを含む、世界に一つだけのオリジナル香水。
+                        あなたの個性を引き立て、特別な瞬間を演出します。
+                        今なら特別価格でご提供中です。
+                    </p>
+                    
+                    <div class="cta-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <img src="check-icon.png" alt="チェック">
+                            </div>
+                            <p class="feature-text">66種類の香りから6種を選べる</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <img src="check-icon.png" alt="チェック">
+                            </div>
+                            <p class="feature-text">インフルエンサー厳選の貴重な香り</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <img src="check-icon.png" alt="チェック">
+                            </div>
+                            <p class="feature-text">2025年トレンドの「ホワイトティー＆タイム」</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <img src="check-icon.png" alt="チェック">
+                            </div>
+                            <p class="feature-text">特別なボトルでお届け</p>
+                        </div>
+                    </div>
+                    
+                    <div class="price-container">
+                        <span class="original-price">¥12,800</span>
+                        <span class="current-price">¥9,800</span>
+                    </div>
+                </div>
+                
+                <div class="cta-form">
+                    <h4 class="form-title">あなただけの香りを作る</h4>
+                    
+                    <form>
+                        <div class="form-group">
+                            <label for="name" class="form-label">お名前</label>
+                            <input type="text" id="name" class="form-input" placeholder="例：山田 花子" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">メールアドレス</label>
+                            <input type="email" id="email" class="form-input" placeholder="例：example@mail.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">電話番号</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="例：090-1234-5678">
+                        </div>
+                        
+                        <button type="submit" class="form-submit">今すぐ注文する</button>
+                    </form>
+                    
+                    <p class="guarantee-text">※30日間の返金保証付き。満足いただけない場合は全額返金いたします。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

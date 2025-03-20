@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>香水ショップ - インフルエンサーコラボレーション</title>
+    <style>
+        /* 全体のスタイル */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'MS Pゴシック', sans-serif;
+            color: #333;
+            background-color: #F8F3E6;
+            line-height: 1.6;
+        }
+        
+        /* カラースキーム */
+        :root {
+            --elegant-purple: #8A6BBE;
+            --soft-cream: #F8F3E6;
+            --gold: #D4AF37;
+            --deep-navy: #1A2C5B;
+            --light-lavender: #E6E6FA;
+            --soft-pink: #F7CAC9;
+        }
+        
+        /* インフルエンサーコラボセクション */
+        .influencer-collab {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--light-lavender) 0%, var(--soft-cream) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            font-family: 'Yu Mincho', 'YuMincho', 'MS PMincho', serif;
+            font-size: 2.5rem;
+            color: var(--deep-navy);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+            margin: 15px auto 0;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--elegant-purple);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .influencer-profile {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .influencer-image-container {
+            flex: 0 0 40%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .influencer-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .influencer-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .influencer-info {
+            flex: 0 0 60%;
+            padding: 40px;
+        }
+        
+        .influencer-name {
+            font-size: 1.8rem;
+            color: var(--deep-navy);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .influencer-title {
+            font-size: 1.1rem;
+            color: var(--elegant-purple);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .influencer-description {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .fragrance-selection {
+            margin-top: 30px;
+        }
+        
+        .fragrance-title {
+            font-size: 1.3rem;
+            color: var(--deep-navy);
+            margin-bottom: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fragrance-title::before {
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: var(--gold);
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .selected-fragrances {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .fragrance-item {
+            background-color: var(--light-lavender);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--deep-navy);
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .fragrance-item:hover {
+            background-color: var(--elegant-purple);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .fragrance-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+        
+        .quote-container {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--light-lavender);
+            border-left: 4px solid var(--elegant-purple);
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: var(--deep-navy);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--elegant-purple);
+            opacity: 0.3;
+            position: absolute;
+            top: -20px;
+            left: -10px;
+        }
+        
+        .special-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--gold);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+            z-index: 3;
+        }
+        
+        .collaboration-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .benefit-card {
+            flex: 0 0 calc(33.333% - 30px);
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background-color: var(--light-lavender);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .benefit-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--elegant-purple);
+        }
+        
+        .benefit-title {
+            font-size: 1.3rem;
+            color: var(--deep-navy);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .benefit-description {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* 装飾要素 */
+        .decoration-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--elegant-purple);
+            top: -100px;
+            right: -100px;
+        }
+        
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--gold);
+            bottom: 100px;
+            left: -50px;
+        }
+        
+        /* レスポンシブ対応 */
+        @media (max-width: 992px) {
+            .influencer-image-container,
+            .influencer-info {
+                flex: 0 0 100%;
+            }
+            
+            .influencer-image-container {
+                height: 300px;
+            }
+            
+            .benefit-card {
+                flex: 0 0 calc(50% - 30px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .influencer-info {
+                padding: 30px;
+            }
+            
+            .benefit-card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="influencer-collab">
+        <div class="decoration-circle circle-1"></div>
+        <div class="decoration-circle circle-2"></div>
+        
+        <div class="container">
+            <h2 class="section-title">インフルエンサーコラボレーション</h2>
+            <p class="section-subtitle">有名インフルエンサーが厳選した貴重な香りで、あなただけの特別な香水を作ります。</p>
+            
+            <div class="influencer-profile">
+                <span class="special-badge">限定コラボ</span>
+                
+                <div class="influencer-image-container">
+                    <img src="influencer.jpg" alt="インフルエンサー" class="influencer-image">
+                </div>
+                
+                <div class="influencer-info">
+                    <h3 class="influencer-name">佐藤 美香</h3>
+                    <p class="influencer-title">ビューティーインフルエンサー / 香りの専門家</p>
+                    <p class="influencer-description">
+                        美容業界で10年以上の経験を持ち、香りの世界に精通したビューティーインフルエンサー。
+                        世界中の香水ブランドとコラボレーションし、独自の視点で香りの魅力を発信しています。
+                        Instagram、YouTubeなどのSNSでは合計100万人以上のフォロワーを持ち、
+                        香りの選び方や楽しみ方について日々情報を発信しています。
+                    </p>
+                    
+                    <div class="fragrance-selection">
+                        <h4 class="fragrance-title">選んだ香り</h4>
+                        <div class="selected-fragrances">
+                            <span class="fragrance-item">
+                                <img src="fragrance-icon.png" alt="香り" class="fragrance-icon">
+                                ホワイトティー＆タイム
+                            </span>
+                            <span class="fragrance-item">
+                                <img src="fragrance-icon.png" alt="香り" class="fragrance-icon">
+                                ローズ
+                            </span>
+                            <span class="fragrance-item">
+                                <img src="fragrance-icon.png" alt="香り" class="fragrance-icon">
+                                ジャスミン
+                            </span>
+                            <span class="fragrance-item">
+                                <img src="fragrance-icon.png" alt="香り" class="fragrance-icon">
+                                ベルガモット
+                            </span>
+                            <span class="fragrance-item">
+                                <img src="fragrance-icon.png" alt="香り" class="fragrance-icon">
+                                アンバー
+                            </span>
+                            <span class="fragrance-item">
+                                <img src="fragrance-icon.png" alt="香り" class="fragrance-icon">
+                                ムスク
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-container">
+                        <p class="quote">
+                            2025年のトレンドである「ホワイトティー＆タイム」を中心に、落ち着きと安心感を与える香りを厳選しました。
+                            この香りの組み合わせは、日常の中で特別な瞬間を作り出し、あなたの個性を引き立てます。
+                            世界に一つだけの香りで、あなただけの物語を紡いでください。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collaboration-benefits">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">厳選された香り</h4>
+                    <p class="benefit-description">
+                        プロフェッショナルな視点で厳選された、2025年のトレンド香りを含む特別なコレクション。
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 7H13V13H11V7ZM11 15H13V17H11V15Z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">限定コラボレーション</h4>
+                    <p class="benefit-description">
+                        有名インフルエンサーとの限定コラボレーション。特別な香りを手に入れるチャンス。
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="benefit-title">効果効能</h4>
+                    <p class="benefit-description">
+                        落ち着きと安心感を与える香りで、日常のストレスを軽減し、心地よい空間を作り出します。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="cta-container">
+                <a href="#create" class="cta-button">インフルエンサー厳選の香りを試す</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
