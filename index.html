@@ -13,20 +13,21 @@
         }
         
         body {
-            font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'MS Pゴシック', sans-serif;
-            color: #333;
-            background-color: #F8F3E6;
+            font-family: 'Noto Sans JP', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, sans-serif;
+            color: var(--main-black);
+            background-color: var(--main-white);
             line-height: 1.6;
         }
         
         /* カラースキーム */
         :root {
-            --elegant-purple: #8A6BBE;
-            --soft-cream: #F8F3E6;
-            --gold: #D4AF37;
-            --deep-navy: #1A2C5B;
-            --light-lavender: #E6E6FA;
-            --soft-pink: #F7CAC9;
+            --main-black: #212121;
+            --soft-black: #333333;
+            --main-white: #FFFFFF;
+            --off-white: #F8F8F8;
+            --accent-grey: #EEEEEE;
+            --text-grey: #666666;
+            --gold-accent: #D4AF37;
         }
         
         /* 共通スタイル */
@@ -39,9 +40,9 @@
         }
         
         .section-title {
-            font-family: 'Yu Mincho', 'YuMincho', 'MS PMincho', serif;
+            font-family: 'Noto Serif JP', 'Yu Mincho', 'YuMincho', serif;
             font-size: 2.5rem;
-            color: var(--deep-navy);
+            color: var(--main-black);
             text-align: center;
             margin-bottom: 2rem;
             position: relative;
@@ -51,14 +52,14 @@
             content: '';
             display: block;
             width: 80px;
-            height: 3px;
-            background-color: var(--gold);
+            height: 2px;
+            background-color: var(--main-black);
             margin: 15px auto 0;
         }
         
         .section-subtitle {
             font-size: 1.2rem;
-            color: var(--elegant-purple);
+            color: var(--text-grey);
             text-align: center;
             margin-bottom: 3rem;
             max-width: 800px;
@@ -68,15 +69,15 @@
         
         .cta-button {
             display: inline-block;
-            background-color: var(--gold);
-            color: white;
+            background-color: var(--main-black);
+            color: var(--main-white);
             padding: 1rem 2.5rem;
-            border-radius: 50px;
+            border-radius: 0;
             font-size: 1.2rem;
             font-weight: bold;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .cta-container{
@@ -85,8 +86,9 @@
         }
         
         .cta-button:hover {
+            background-color: var(--gold-accent);
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
         
         /* 装飾要素 */
@@ -101,7 +103,7 @@
         .hero {
             position: relative;
             height: 100vh;
-            background: linear-gradient(135deg, var(--light-lavender) 0%, var(--elegant-purple) 100%);
+            background: var(--main-white);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -118,8 +120,9 @@
             background-image: url('./images/perfume.jpeg');
             background-size: cover;
             background-position: center;
-            opacity: 0.2;
+            opacity: 0.1;
             z-index: 1;
+            filter: grayscale(100%);
         }
         
         .hero-content {
@@ -131,16 +134,16 @@
         }
         
         .hero-title {
-            font-family: 'Yu Mincho', 'YuMincho', 'MS PMincho', serif;
+            font-family: 'Noto Serif JP', 'Yu Mincho', 'YuMincho', serif;
             font-size: 3.5rem;
-            color: var(--deep-navy);
+            color: var(--main-black);
             margin-bottom: 1rem;
             line-height: 1.2;
         }
         
         .hero-subtitle {
             font-size: 1.5rem;
-            color: var(--deep-navy);
+            color: var(--soft-black);
             margin-bottom: 2rem;
         }
         
@@ -155,10 +158,10 @@
         
         .influencer-badge {
             display: inline-block;
-            background-color: var(--gold);
-            color: white;
+            background-color: var(--main-black);
+            color: var(--main-white);
             padding: 0.5rem 1.5rem;
-            border-radius: 50px;
+            border-radius: 0;
             font-weight: bold;
             margin-bottom: 2rem;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -490,19 +493,20 @@
         }
         
         .fragrance-item {
-            background-color: var(--light-lavender);
+            background-color: var(--accent-grey);
             padding: 10px 20px;
-            border-radius: 30px;
+            border-radius: 0;
             font-size: 0.9rem;
-            color: var(--deep-navy);
+            color: var(--main-black);
             display: inline-flex;
             align-items: center;
             transition: all 0.3s ease;
+            margin-bottom: 10px;
         }
         
         .fragrance-item:hover {
-            background-color: var(--elegant-purple);
-            color: white;
+            background-color: var(--main-black);
+            color: var(--main-white);
             transform: translateY(-3px);
         }
         
@@ -855,10 +859,10 @@
         /* CTAセクション */
         .cta-section {
             padding: 100px 0;
-            background: linear-gradient(135deg, var(--elegant-purple) 0%, var(--deep-navy) 100%);
+            background: var(--off-white);
             position: relative;
             overflow: hidden;
-            color: white;
+            color: var(--main-black);
         }
         
         .cta-content {
@@ -1199,6 +1203,264 @@
                 height: 150px;
             }
         }
+        
+        /* 固定注文ボタン */
+        .fixed-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: var(--main-black);
+            color: var(--main-white);
+            padding: 12px 25px;
+            border-radius: 0;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .fixed-cta:hover {
+            background-color: var(--gold-accent);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .fixed-cta {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* 香り選定プロセス用スタイル */
+        .fragrance-journey {
+            margin-top: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--accent-grey);
+        }
+
+        .journey-title {
+            font-size: 1.3rem;
+            color: var(--main-black);
+            margin-bottom: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .journey-title::before {
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-color: var(--main-black);
+            margin-right: 10px;
+        }
+
+        .journey-description {
+            font-size: 1rem;
+            color: var(--text-grey);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .journey-photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .journey-photo {
+            flex: 0 0 calc(33.333% - 14px);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .journey-photo img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .journey-photo:hover img {
+            transform: scale(1.05);
+        }
+
+        .photo-caption {
+            padding: 10px;
+            background-color: var(--main-white);
+            color: var(--main-black);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* 使用シーン用スタイル */
+        .usage-scenes {
+            margin-top: 80px;
+        }
+
+        .scenes-title {
+            font-size: 1.8rem;
+            color: var(--main-black);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .scenes-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-grey);
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .scenes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .scene-card {
+            flex: 0 0 calc(33.333% - 20px);
+            background-color: var(--main-white);
+            border: 1px solid var(--accent-grey);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .scene-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .scene-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .scene-card:hover .scene-image img {
+            transform: scale(1.05);
+        }
+
+        .scene-title {
+            padding: 15px 20px 0;
+            font-size: 1.3rem;
+            color: var(--main-black);
+            font-weight: bold;
+        }
+
+        .scene-description {
+            padding: 10px 20px 20px;
+            font-size: 1rem;
+            color: var(--text-grey);
+            line-height: 1.7;
+        }
+
+        /* 限定数の表示スタイル */
+        .limited-stock {
+            display: inline-block;
+            background-color: var(--main-black);
+            color: var(--main-white);
+            padding: 8px 15px;
+            margin-left: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .stock-number {
+            color: var(--gold-accent);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0 3px;
+        }
+
+        /* レスポンシブ対応強化 */
+        @media (max-width: 992px) {
+            .journey-photo {
+                flex: 0 0 calc(50% - 10px);
+            }
+            
+            .scene-card {
+                flex: 0 0 calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .journey-photo,
+            .scene-card {
+                flex: 0 0 100%;
+            }
+            
+            .cta-text, 
+            .cta-form {
+                padding: 25px;
+            }
+            
+            .limited-stock {
+                display: block;
+                margin-left: 0;
+                margin-top: 10px;
+                text-align: center;
+                max-width: fit-content;
+            }
+            
+            .price-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .original-price {
+                margin-bottom: 5px;
+            }
+        }
+
+        /* 画像のモノクロ化 */
+        img {
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        img:hover {
+            filter: grayscale(80%);
+        }
+
+        /* ゴールドアクセントの適用 */
+        .benefit-stat .stat-number,
+        .combination-number,
+        .current-price,
+        .counter-number {
+            color: var(--gold-accent);
+        }
     </style>
 </head>
 <body>
@@ -1207,7 +1469,8 @@
         <div class="hero-content">
             <span class="influencer-badge">有名インフルエンサー厳選</span>
             <h1 class="hero-title">世界に一つだけの香り</h1>
-            <h2 class="hero-subtitle">66種類の香りから6種を選ぶ、9000万通りの可能性</h2>
+            <h2 class="hero-subtitle">66種類の香りから6種を選ぶ<br>
+                9000万通りの可能性</h2>
             <p class="hero-description">あなただけの物語を紡ぐ特別な香りを。有名インフルエンサーが厳選した貴重な香りで、日常に特別な瞬間を。</p>
             <a href="#create" class="cta-button">あなただけの香りを作る</a>
         </div>
@@ -1219,6 +1482,123 @@
         
     </section>
     
+    <!-- インフルエンサーコラボセクション -->
+    <section class="influencer-collab">
+        <div class="container">
+            <h2 class="section-title">インフルエンサーコラボレーション</h2>
+            <p class="section-subtitle">有名インフルエンサーが厳選した貴重な香りで、あなただけの特別な香水を作ります。</p>
+            
+            <div class="influencer-profile">
+                <div class="influencer-image-container">
+                    <img src="./images/influence.jpeg" alt="インフルエンサー" style="filter: grayscale(100%);">
+                </div>
+                
+                <div class="influencer-info">
+                    <h3 class="influencer-name">佐藤 美香</h3>
+                    <p class="influencer-title">ビューティーインフルエンサー / 香りの専門家</p>
+                    <p class="influencer-description">
+                        美容業界で10年以上の経験を持ち、香りの世界に精通したビューティーインフルエンサー。
+                        世界中の香水ブランドとコラボレーションし、独自の視点で香りの魅力を発信しています。
+                        Instagram、YouTubeなどのSNSでは合計100万人以上のフォロワーを持ち、
+                        香りの選び方や楽しみ方について日々情報を発信しています。
+                    </p>
+                    
+                    <!-- 香り選定プロセスの追加 -->
+                    <div class="fragrance-journey">
+                        <h4 class="journey-title">香りの選定ストーリー</h4>
+                        <p class="journey-description">
+                            この特別な香りを選定するために、私は世界中の香料メーカーを巡り、300種類以上の原料を嗅ぎ分けました。
+                            自然由来の香りにこだわり、特にホワイトティーとタイムの組み合わせの可能性に着目。
+                            最終的に66種類に厳選し、様々な組み合わせを試した結果、理想の香りにたどり着きました。
+                        </p>
+                        
+                        <!-- 香り選定工程の写真 -->
+                        <div class="journey-photos">
+                            <div class="journey-photo">
+                                <img src="./images/process1.jpg" alt="香料メーカーでの選定" style="filter: grayscale(100%);">
+                                <p class="photo-caption">フランスの香料メーカーでの選定</p>
+                            </div>
+                            <div class="journey-photo">
+                                <img src="./images/process2.jpg" alt="試作品のテスト" style="filter: grayscale(100%);">
+                                <p class="photo-caption">試作品のブラインドテスト</p>
+                            </div>
+                            <div class="journey-photo">
+                                <img src="./images/process3.jpg" alt="最終調香" style="filter: grayscale(100%);">
+                                <p class="photo-caption">最終的な香りの調合</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fragrance-selection-info">
+                        <h4 class="fragrance-title">選んだ香り</h4>
+                        <div class="selected-fragrances-list">
+                            <span class="fragrance-item">ホワイトティー＆タイム</span>
+                            <span class="fragrance-item">ローズ</span>
+                            <span class="fragrance-item">ジャスミン</span>
+                            <span class="fragrance-item">ベルガモット</span>
+                            <span class="fragrance-item">アンバー</span>
+                            <span class="fragrance-item">ムスク</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quote-container">
+                        <p class="quote">
+                            2025年のトレンドである「ホワイトティー＆タイム」を中心に、落ち着きと安心感を与える香りを厳選しました。
+                            この香りの組み合わせは、日常の中で特別な瞬間を作り出し、あなたの個性を引き立てます。
+                            世界に一つだけの香りで、あなただけの物語を紡いでください。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 使用シーン追加 -->
+            <div class="usage-scenes">
+                <h3 class="scenes-title">シーン別の香りの楽しみ方</h3>
+                <p class="scenes-subtitle">日常のさまざまな場面で、あなたの香りがもたらす特別な瞬間</p>
+                
+                <div class="scenes-container">
+                    <div class="scene-card">
+                        <div class="scene-image">
+                            <img src="./images/morning.jpg" alt="朝のルーティン" style="filter: grayscale(100%);">
+                        </div>
+                        <h4 class="scene-title">朝のルーティン</h4>
+                        <p class="scene-description">
+                            一日の始まりに、ホワイトティー＆タイムの爽やかな香りが集中力と前向きな気持ちをもたらします。
+                            朝の身支度の際に首元や手首につけることで、一日中心地よい香りが続きます。
+                        </p>
+                    </div>
+                    
+                    <div class="scene-card">
+                        <div class="scene-image">
+                            <img src="./images/meeting.jpg" alt="ビジネスシーン" style="filter: grayscale(100%);">
+                        </div>
+                        <h4 class="scene-title">ビジネスシーン</h4>
+                        <p class="scene-description">
+                            ベルガモットとジャスミンの上品で知的な印象を与える香りが、会議やプレゼンテーションの場で自信を引き立てます。
+                            主張しすぎない控えめな香りは、プロフェッショナルな印象を残します。
+                        </p>
+                    </div>
+                    
+                    <div class="scene-card">
+                        <div class="scene-image">
+                            <img src="./images/evening.jpg" alt="特別な夜" style="filter: grayscale(100%);">
+                        </div>
+                        <h4 class="scene-title">特別な夜</h4>
+                        <p class="scene-description">
+                            夜のお出かけには、アンバーとムスクの深みのある香りが魅力的な雰囲気を演出します。
+                            特別なディナーや大切な人との時間に、忘れられない印象を残す香りです。
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-container">
+                <a href="#create" class="cta-button">インフルエンサー厳選の香りを試す</a>
+            </div>
+        </div>
+    </section>
+
+
     <!-- 香りの選択プロセスセクション -->
     <section class="fragrance-selection">
         <div class="decoration-circle circle-1"></div>
@@ -1320,115 +1700,6 @@
         </div>
     </section>
     
-    <!-- インフルエンサーコラボセクション -->
-    <section class="influencer-collab">
-        <div class="decoration-circle circle-1"></div>
-        <div class="decoration-circle circle-2"></div>
-        
-        <div class="container">
-            <h2 class="section-title">インフルエンサーコラボレーション</h2>
-            <p class="section-subtitle">有名インフルエンサーが厳選した貴重な香りで、あなただけの特別な香水を作ります。</p>
-            
-            <div class="influencer-profile">
-                <span class="special-badge">限定コラボ</span>
-                
-                <div class="influencer-image-container">
-                    <img src="./images/influence.jpeg" alt="インフルエンサー">
-                </div>
-                
-                <div class="influencer-info">
-                    <h3 class="influencer-name">佐藤 美香</h3>
-                    <p class="influencer-title">ビューティーインフルエンサー / 香りの専門家</p>
-                    <p class="influencer-description">
-                        美容業界で10年以上の経験を持ち、香りの世界に精通したビューティーインフルエンサー。
-                        世界中の香水ブランドとコラボレーションし、独自の視点で香りの魅力を発信しています。
-                        Instagram、YouTubeなどのSNSでは合計100万人以上のフォロワーを持ち、
-                        香りの選び方や楽しみ方について日々情報を発信しています。
-                    </p>
-                    
-                    <div class="fragrance-selection-info">
-                        <h4 class="fragrance-title">選んだ香り</h4>
-                        <div class="selected-fragrances-list">
-                            <span class="fragrance-item">
-                                <img src="./images/tea.jpeg" alt="香り" class="fragrance-icon">
-                                ホワイトティー＆タイム
-                            </span>
-                            <span class="fragrance-item">
-                                <img src="./images/bala.jpeg" alt="香り" class="fragrance-icon">
-                                ローズ
-                            </span>
-                            <span class="fragrance-item">
-                                <img src="./images/jusmin.jpeg" alt="香り" class="fragrance-icon">
-                                ジャスミン
-                            </span>
-                            <span class="fragrance-item">
-                                <img src="./images/belgmot.jpeg" alt="香り" class="fragrance-icon">
-                                ベルガモット
-                            </span>
-                            <span class="fragrance-item">
-                                <img src="./images/amber.jpeg" alt="香り" class="fragrance-icon">
-                                アンバー
-                            </span>
-                            <span class="fragrance-item">
-                                <img src="./images/musk.jpeg" alt="香り" class="fragrance-icon">
-                                ムスク
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <div class="quote-container">
-                        <p class="quote">
-                            2025年のトレンドである「ホワイトティー＆タイム」を中心に、落ち着きと安心感を与える香りを厳選しました。
-                            この香りの組み合わせは、日常の中で特別な瞬間を作り出し、あなたの個性を引き立てます。
-                            世界に一つだけの香りで、あなただけの物語を紡いでください。
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="collaboration-benefits">
-                <div class="benefit-card">
-                    <div class="benefit-icon1">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
-                        </svg>
-                    </div>
-                    <h4 class="benefit-title">厳選された香り</h4>
-                    <p class="benefit-description">
-                        プロフェッショナルな視点で厳選された、2025年のトレンド香りを含む特別なコレクション。
-                    </p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon1">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 7H13V13H11V7ZM11 15H13V17H11V15Z"></path>
-                        </svg>
-                    </div>
-                    <h4 class="benefit-title">限定コラボレーション</h4>
-                    <p class="benefit-description">
-                        有名インフルエンサーとの限定コラボレーション。特別な香りを手に入れるチャンス。
-                    </p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon1">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"></path>
-                        </svg>
-                    </div>
-                    <h4 class="benefit-title">効果効能</h4>
-                    <p class="benefit-description">
-                        落ち着きと安心感を与える香りで、日常のストレスを軽減し、心地よい空間を作り出します。
-                    </p>
-                </div>
-            </div>
-            
-            <div class="cta-container">
-                <a href="#create" class="cta-button">インフルエンサー厳選の香りを試す</a>
-            </div>
-        </div>
-    </section>
     
     <!-- 香りの効果効能セクション -->
     <section class="fragrance-benefits">
@@ -1591,9 +1862,6 @@
     
     <!-- CTAセクション -->
     <section class="cta-section" id="create">
-        <img src="./images/perfume.jpeg" alt="香水ボトル" class="floating-perfume perfume-1">
-        <img src="./images/perfume.jpeg" alt="香水ボトル" class="floating-perfume perfume-2">
-        
         <div class="container">
             <h2 class="section-title">あなただけの香りを手に入れる</h2>
             <p class="section-subtitle">66種類の香りから6種を選び、9000万通りの中からあなただけの特別な香水を作ります。</p>
@@ -1601,6 +1869,7 @@
             <div class="cta-content">
                 <div class="cta-text">
                     <span class="limited-offer">期間限定オファー</span>
+                    <span class="limited-stock">あと残り<span class="stock-number">367</span>個 / 1000個限定</span>
                     <h3 class="cta-heading">インフルエンサー厳選の香りで、あなただけの物語を紡ぐ</h3>
                     <p class="cta-description">
                         有名インフルエンサーが厳選した貴重な香りを含む、世界に一つだけのオリジナル香水。
@@ -1690,7 +1959,7 @@
             <div class="footer-social">
                 <a href="#" class="social-icon">
                     <svg viewBox="0 0 24 24">
-                        <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path>
+                        <path d="M12 2.04C6.48 2.04 2 6.48 2 12.06C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM11 7H13V13H11V7ZM11 15H13V17H11V15Z"></path>
                     </svg>
                 </a>
                 <a href="#" class="social-icon">
@@ -1713,5 +1982,8 @@
             <p class="copyright">© 2025 世界に一つだけの香り. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- 固定注文ボタン -->
+    <a href="#create" class="fixed-cta">今すぐ注文する</a>
 </body>
 </html>
