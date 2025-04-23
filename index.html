@@ -156,6 +156,9 @@
             color: var(--soft-black);
             margin-bottom: 2rem;
         }
+        .gold-description{
+            font-size: 1.7rem;
+        }
         
         .hero-description {
             font-size: 1.2rem;
@@ -1192,6 +1195,9 @@
             .hero-subtitle {
                 font-size: 1.2rem;
             }
+            .gold-description{
+                font-size: 1.4rem;
+            }
             
             .step,
             .benefit-card,
@@ -1438,7 +1444,9 @@
             .hero-subtitle {
                 font-size: 1.1rem;
             }
-            
+            .gold-description{
+                font-size: 1.3rem;
+            }
             .journey-photo,
             .scene-card {
                 flex: 0 0 100%;
@@ -1476,13 +1484,21 @@
         /* img:hover {
             filter: grayscale(80%);
         } */
-
+       
         /* ゴールドアクセントの適用 */
         .benefit-stat .stat-number,
         .combination-number,
         .current-price,
+        .gold-description,
         .counter-number {
             color: var(--gold-accent);
+        }
+
+        /* gold-descriptionのスタイル修正 */
+        .gold-description {
+            font-weight: bold;
+            color: var(--gold-accent);
+            display: inline; /* インライン要素として表示 */
         }
     </style>
 </head>
@@ -1491,9 +1507,9 @@
     <section class="hero">
         <div class="hero-content">
             <span class="influencer-badge">有名インフルエンサー調香</span>
-            <h1 class="hero-title">世界に一つだけの香り</h1>
-            <h2 class="hero-subtitle">66種類の香りから6種を選ぶ<br>
-                9000万通り以上の組み合わせ</h2>
+            <h1 class="hero-title">成瀬愛理 監修 <br class="br-sp">Lumiere Perfume</h1>
+            <h2 class="hero-subtitle">9000万通り以上の組み合わせから<br>
+                本当にいいと思った香り<span class="gold-description">だけ</span>を<span class="gold-description">厳選</span>して調香</h2>
             <!-- <p class="hero-description">あなただけの物語を紡ぐ特別な香りを。有名インフルエンサーが厳選した貴重な香りで、日常に特別な瞬間を。</p> -->
             <a href="#create" class="cta-button">ご注文はこちらから</a>
         </div>
