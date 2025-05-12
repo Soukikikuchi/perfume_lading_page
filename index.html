@@ -89,6 +89,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            font-family: 'Zapf Humanist', 'Arial', sans-serif;
         }
 
         .cta-container{
@@ -114,11 +115,13 @@
         .hero {
             position: relative;
             height: 100vh;
-            background: var(--main-white);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            background-image: url('./images/TOP.jpeg');
+            background-size: cover;
+            background-position: center;
         }
         
         .hero::before {
@@ -128,12 +131,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('./images/perfume.jpeg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
             z-index: 1;
-            filter: grayscale(100%);
         }
         
         .hero-content {
@@ -149,12 +147,14 @@
             color: var(--main-black);
             margin-bottom: 1rem;
             line-height: 1.2;
+            background-color: rgba(255 255 255 / 0.4);
         }
         
         .hero-subtitle {
             font-size: 1.5rem;
             color: var(--soft-black);
             margin-bottom: 2rem;
+            background-color: rgba(255 255 255 / 0.4);
         }
         .gold-description{
             font-size: 1.7rem;
@@ -906,9 +906,14 @@
         /* CTA内の説明文の調整 */
         .cta-description {
             font-size: 1.1rem;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             line-height: 1.8;
             max-width: 900px; /* テキスト幅も広げる */
+        }
+        .cta-description-bold{
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
         }
         
         .cta-features {
@@ -1031,7 +1036,7 @@
         }
         
         .current-price {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--deep-navy);
             font-weight: bold;
         }
@@ -1283,6 +1288,7 @@
             font-weight: bold;
             display: flex;
             align-items: center;
+            text-align: center;
         }
 
         .journey-title::before {
@@ -1290,7 +1296,7 @@
             display: inline-block;
             width: 15px;
             height: 15px;
-            background-color: var(--main-black);
+            /* background-color: var(--main-black); */
             margin-right: 10px;
         }
 
@@ -1506,16 +1512,37 @@
             color: var(--gold-accent);
             display: inline; /* インライン要素として表示 */
         }
+
+        .asset-2 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 90px; /* サイズは必要に応じて調整 */
+            height: auto;
+            z-index: 3;
+        }
+
+        .notice-text {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 50px;
+            line-height: 1.4;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body>
     <!-- ヒーローセクション -->
     <section class="hero">
+        <img class="asset-2" src="./images/アセット 2.png" alt="asset_2">
         <div class="hero-content">
-            <span class="influencer-badge">有名インフルエンサー調香</span>
-            <h1 class="hero-title">成瀬愛里 監修 <br class="br-sp">Lumiere Perfume</h1>
+            <!-- <span class="influencer-badge">有名インフルエンサー調香</span> -->
+            
+            <!-- <h1 class="hero-title">成瀬愛里 監修 <br class="br-sp">Lumiere Perfume</h1>
             <h2 class="hero-subtitle">9000万通り以上の組み合わせから<br>
-                心惹かれる香り<span class="gold-description">だけ</span>を<span class="gold-description">厳選</span>して調香</h2>
+                心惹かれる香りだけを厳選して調香</h2> -->
             <!-- <p class="hero-description">あなただけの物語を紡ぐ特別な香りを。有名インフルエンサーが厳選した貴重な香りで、日常に特別な瞬間を。</p> -->
             <a href="#create" class="cta-button">ご注文はこちらから</a>
         </div>
@@ -1550,11 +1577,14 @@
                     
                     <!-- 香り選定プロセスの追加 -->
                     <div class="fragrance-journey">
-                        <h4 class="journey-title">香りの選定ストーリー</h4>
+                        <h4 class="journey-title">わたしが毎日<br>つけたくなった香り</h4>
                         <p class="journey-description">
-                            この特別な香りを選定するために、私は世界中の香料メーカーを巡り、300種類以上の原料を嗅ぎ分けました。
-                            自然由来の香りにこだわり、特にホワイトティーとタイムの組み合わせの可能性に着目。
-                            最終的に66種類に厳選し、様々な組み合わせを試した結果、理想の香りにたどり着きました。
+                            甘すぎず、でもちゃんと可愛くて、
+                            ふわっと軽やかで、どこか芯のある香り。
+                            そんな"自分らしさ"を大切にしたくて、
+                            300種類以上の香料を実際に嗅ぎ分けながら選びました。
+                            最初に広がる果実のやさしさ、花の清潔感、そして最後に残る温かい甘さ。
+                            朝の気分を整えたいときも、夜にほっとしたいときも、すっと寄り添ってくれる香りです。自分のために纏いたくなる、そんな香りになったと思います。
                         </p>
                         
                         <!-- 香り選定工程の写真 -->
@@ -1586,20 +1616,22 @@
                     <div class="fragrance-selection-info">
                         <h4 class="fragrance-title">選んだ香り</h4>
                         <div class="selected-fragrances-list">
-                            <span class="fragrance-item">ホワイトティー＆タイム</span>
+                            <span class="fragrance-item">ベルガモット</span>
+                            <span class="fragrance-item">ブルーベリー</span>
+                            <span class="fragrance-item">ピーチ</span>
                             <span class="fragrance-item">ローズ</span>
                             <span class="fragrance-item">ジャスミン</span>
-                            <span class="fragrance-item">ベルガモット</span>
-                            <span class="fragrance-item">アンバー</span>
+                            <span class="fragrance-item">れんげ</span>
+                            <span class="fragrance-item">すずらん</span>
+                            <span class="fragrance-item">バニラビーンズ</span>
                             <span class="fragrance-item">ムスク</span>
+                            <span class="fragrance-item">ハニー</span>
                         </div>
                     </div>
                     
                     <div class="quote-container">
                         <p class="quote">
-                            2025年のトレンドである「ホワイトティー＆タイム」を中心に、落ち着きと安心感を与える香りを厳選しました。
-                            この香りの組み合わせは、日常の中で特別な瞬間を作り出し、あなたの個性を引き立てます。
-                            世界に一つだけの香りで、あなただけの物語を紡いでください。
+                            トップノートにはピーチとブルーベリーの果実感が明るさを演出し、ミドルノートではローズやすずらんの優雅なお花の香りが舞い上がり大人の女性らしさが感じられます。残香として官能的なムスクやバニラビーンズの香りが優しく長く残ります。
                         </p>
                     </div>
                 </div>
@@ -1611,12 +1643,12 @@
             <!-- 使用シーン追加 -->
             <div class="usage-scenes">
                 <h3 class="scenes-title">シーン別の香りの<br class="br-sp">楽しみ方</h3>
-                <p class="scenes-subtitle">日常のさまざまな場面で、あなたの香りがもたらす特別な瞬間</p>
+                <!-- <p class="scenes-subtitle">日常のさまざまな場面で、あなたの香りがもたらす特別な瞬間</p> -->
                 
                 <div class="scenes-container">
                     <div class="scene-card">
                         <div class="scene-image">
-                            <img src="images/morning_rotutin.jpeg" alt="手首につける">
+                            <img src="./images/手首.jpeg" alt="手首につける">
                         </div>
                         <h4 class="scene-title">手首につける</h4>
                         <p class="scene-description">
@@ -1627,7 +1659,7 @@
                     
                     <div class="scene-card">
                         <div class="scene-image">
-                            <img src="images/bussines.jpeg" alt="首につける">
+                            <img src="./images/首.jpeg" alt="首につける">
                         </div>
                         <h4 class="scene-title">首につける</h4>
                         <p class="scene-description">
@@ -1638,7 +1670,7 @@
                     
                     <div class="scene-card">
                         <div class="scene-image">
-                            <img src="images/dinner.jpeg" alt="足首につける">
+                            <img src="./images/足首.jpeg" alt="足首につける">
                         </div>
                         <h4 class="scene-title">足首につける</h4>
                         <p class="scene-description">
@@ -1650,7 +1682,7 @@
             </div>
             
             <div class="cta-container">
-                <a href="#create" class="cta-button">インフルエンサー<br class="br-sp">厳選の香りを試す</a>
+                <a href="#create" class="cta-button">今すぐ注文する</a>
             </div>
         </div>
     </section>
@@ -1772,9 +1804,9 @@
                     <div class="benefit-icon">
                         <img src="./images/relux.jpeg" alt="リラックス">
                     </div>
-                    <h3 class="benefit-title">心を落ち着かせる</h3>
+                    <h3 class="benefit-title">ベルガモット</h3>
                     <p class="benefit-description">
-                        ホワイトティー＆タイムを中心とした香りが、ストレスを軽減し、心を穏やかにします。日常の喧騒から解放され、深いリラクゼーションへと導きます。
+                        すっきりとした香り立ちで、気分に澄んだ空気が流れ込むよう。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">87%</span>
@@ -1786,9 +1818,9 @@
                     <div class="benefit-icon">
                         <img src="./images/bala.jpeg" alt="集中力">
                     </div>
-                    <h3 class="benefit-title">集中力を高める</h3>
+                    <h3 class="benefit-title">ブルーベリー</h3>
                     <p class="benefit-description">
-                        シトラスとハーブの香りが脳を活性化し、集中力と記憶力を向上させます。仕事や勉強など、集中が必要な場面で効果を発揮します。
+                        果実の自然な甘さが、緊張をやわらげてくれるような印象。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">65%</span>
@@ -1800,9 +1832,9 @@
                     <div class="benefit-icon">
                         <img src="./images/sleep.jpeg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">質の高い睡眠</h3>
+                    <h3 class="benefit-title">ピーチ</h3>
                     <p class="benefit-description">
-                        ラベンダーとムスクのブレンドが、自然な眠りへと誘います。寝つきを良くし、朝までぐっすりと質の高い睡眠をサポートします。
+                        やさしく包み込まれるような甘さで、心にぬくもりを添えてくれます。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -1813,9 +1845,9 @@
                     <div class="benefit-icon">
                         <img src="./images/sleep.jpeg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">質の高い睡眠</h3>
+                    <h3 class="benefit-title">ローズ</h3>
                     <p class="benefit-description">
-                        ラベンダーとムスクのブレンドが、自然な眠りへと誘います。寝つきを良くし、朝までぐっすりと質の高い睡眠をサポートします。
+                        気品ある華やかさが、女性らしさをそっと引き立ててくれます。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -1826,9 +1858,9 @@
                     <div class="benefit-icon">
                         <img src="./images/sleep.jpeg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">質の高い睡眠</h3>
+                    <h3 class="benefit-title">ジャスミン</h3>
                     <p class="benefit-description">
-                        ラベンダーとムスクのブレンドが、自然な眠りへと誘います。寝つきを良くし、朝までぐっすりと質の高い睡眠をサポートします。
+                        透明感のあるフローラルが、心に静けさと深呼吸を。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -1839,9 +1871,9 @@
                     <div class="benefit-icon">
                         <img src="./images/sleep.jpeg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">質の高い睡眠</h3>
+                    <h3 class="benefit-title">れんげ</h3>
                     <p class="benefit-description">
-                        ラベンダーとムスクのブレンドが、自然な眠りへと誘います。寝つきを良くし、朝までぐっすりと質の高い睡眠をサポートします。
+                        どこか懐かしくやさしい香りが、自分らしさをそっと思い出させてくれます。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -1852,9 +1884,9 @@
                     <div class="benefit-icon">
                         <img src="./images/sleep.jpeg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">質の高い睡眠</h3>
+                    <h3 class="benefit-title">すずらん</h3>
                     <p class="benefit-description">
-                        ラベンダーとムスクのブレンドが、自然な眠りへと誘います。寝つきを良くし、朝までぐっすりと質の高い睡眠をサポートします。
+                        清らかでやわらかな印象が、清潔感のある空気をつくります。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -1865,9 +1897,9 @@
                     <div class="benefit-icon">
                         <img src="./images/sleep.jpeg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">質の高い睡眠</h3>
+                    <h3 class="benefit-title">バニラビーンズ</h3>
                     <p class="benefit-description">
-                        ラベンダーとムスクのブレンドが、自然な眠りへと誘います。寝つきを良くし、朝までぐっすりと質の高い睡眠をサポートします。
+                        温かみのある甘さが、安心感と落ち着きをそっと残します。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -1878,9 +1910,9 @@
                     <div class="benefit-icon">
                         <img src="./images/sleep.jpeg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">質の高い睡眠</h3>
+                    <h3 class="benefit-title">ムスク</h3>
                     <p class="benefit-description">
-                        ラベンダーとムスクのブレンドが、自然な眠りへと誘います。寝つきを良くし、朝までぐっすりと質の高い睡眠をサポートします。
+                        どこまでもなめらかで、素肌に自然となじむ清らかな香り。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -1891,9 +1923,9 @@
                     <div class="benefit-icon">
                         <img src="./images/sleep.jpeg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">質の高い睡眠</h3>
+                    <h3 class="benefit-title">ハニー</h3>
                     <p class="benefit-description">
-                        ラベンダーとムスクのブレンドが、自然な眠りへと誘います。寝つきを良くし、朝までぐっすりと質の高い睡眠をサポートします。
+                        ほんのり甘く、とろけるような余韻が空間を満たします。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -1903,7 +1935,7 @@
 
             </div>
             
-            <div class="trend-highlight">
+            <!-- <div class="trend-highlight">
                 <h3 class="trend-title">2025年トレンドの香り：ホワイトティー＆タイム</h3>
                 
                 <div class="trend-content">
@@ -1947,7 +1979,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             
             <!-- <div class="testimonials">
                 <h3 class="testimonial-title">お客様の声</h3>
@@ -2013,7 +2045,7 @@
     <section class="cta-section" id="create">
         <div class="container">
             <h2 class="section-title">成瀬愛里 監修の<br class="br-sp">香りを手に入れる</h2>
-            <p class="section-subtitle">9000万通り以上の組み合わせから<br class="br-sp">厳選された香り</p>
+            <!-- <p class="section-subtitle">9000万通り以上の組み合わせから<br class="br-sp">厳選された香り</p> -->
             
             <div class="cta-content">
                 <div class="cta-text">
@@ -2021,15 +2053,19 @@
                     <span class="limited-stock">
                         <!-- あと残り<span class="stock-number">367</span>個 /  -->
                         1000個限定</span>
-                    <h3 class="cta-heading">成瀬愛里が厳選した<br class="br-sp">香水を購入できるのはここだけ！</h3>
-                   
+                    <!-- <h3 class="cta-heading">成瀬愛里が厳選した<br class="br-sp">香水を購入できるのはここだけ！</h3> -->
+                    <h3 class="cta-heading">最後にお伝えしたいこと</h3>
                     <p class="cta-description">
-                        有名インフルエンサーが調香した貴重な香りを含む、世界に一つだけのオリジナル香水。
-                        あなたの個性を引き立て、特別な瞬間を演出します。
-                        今なら特別価格でご提供中です。
+                        この香りは、「誰かのため」ではなく「わたしのため」に選びました。
+                        気分を整えたい朝も、リラックスしたい夜も、
+                        お出かけの日にも、いつもの日常にも。
+                        どんなシーンでも、自分らしくいられるように――
+                        そんな想いを込めて、毎日の中で自然に纏える香りに仕上げました。
+                        あなたの毎日に、そっと寄り添ってくれますように。
                     </p>
+                    <div class="cta-description-bold">by 成瀬愛里</div>
                     
-                    <div class="cta-features">
+                    <!-- <div class="cta-features">
                         <div class="feature-item">
                             <div class="feature-icon-cta">
                                 ✔︎
@@ -2057,16 +2093,27 @@
                             </div>
                             <p class="feature-text-cta">特別なボトルでお届け</p>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <div class="price-container">
-                        <span class="original-price">¥12,800</span>
-                        <span class="current-price">¥9,800</span>
+                        <span class="limited-stock">ご購入はこちら</span>
+                            Lumiere Parufam limited edition by Naruse Airi<br>
+                        <span class="current-price">50ml／￥8,980（税込）</span>
                     </div>
                     <div class="cta-container">
                         <a href="#create" class="cta-button">今すぐ注文</a>
                     </div>
-                </div>
+                    <div class="notice-text">
+                        ※発送について<br>
+                        ご注文から3営業日以内に発送いたします。<br>
+                        日時指定はご利用いただけませんので、あらかじめご了承ください。<br><br>
+                        
+                        ※ご注意事項<br>
+                        ・こちらの商品は数量限定・先着順での販売となります。<br>
+                        ・キャンセル・返品は未開封・未使用に限り、商品到着後10日以内で承ります。<br>
+                        ・香りの感じ方には個人差がございます。ご理解の上、ご購入をお願いいたします。
+                    </div>
+                </p>
                 
                 <!-- <div class="cta-form">
                     <h4 class="form-title">あなただけの香りを作る</h4>
@@ -2097,7 +2144,7 @@
     </section>
     
     <!-- フッター -->
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container">
             <div class="footer-logo">世界に一つだけの香り</div>
             
@@ -2136,7 +2183,7 @@
             
             <p class="copyright">© 2025 世界に一つだけの香り. All rights reserved.</p>
         </div>
-    </footer>
+    </footer> -->
 
     <!-- 固定注文ボタン -->
     <a href="#create" class="fixed-cta">今すぐ注文する</a>
