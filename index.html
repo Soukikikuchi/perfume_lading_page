@@ -1597,6 +1597,49 @@
                 min-width: 180px;
             }
         }
+
+        /* CSS追加・修正 */
+        .scene-image-bg {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 220px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .scene-description-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(33,33,33,0.55);
+            color: #fff;
+            padding: 18px 20px;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            max-width: 90%;
+            width: 100%;
+            line-height: 1.7;
+        }
+        .scene-title {
+            padding: 15px 20px 0;
+            font-size: 1.3rem;
+            color: var(--main-black);
+            font-weight: bold;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            
+            .scene-description-overlay {
+                font-size: 1rem;
+                padding: 10px 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1734,37 +1777,31 @@
                 <!-- <p class="scenes-subtitle">日常のさまざまな場面で、あなたの香りがもたらす特別な瞬間</p> -->
                 
                 <div class="scenes-container">
-                    <div class="scene-card">
-                        <div class="scene-image">
-                            <img src="./images/手首.jpeg" alt="手首につける">
+                    <div class="scene-card scene-card-wrist">
+                        <div class="scene-image scene-image-bg" style="background-image: url('./images/手首.jpeg');">
+                            <div class="scene-description-overlay">
+                                動くたびに、香りがふわりと立ちのぼる。<br>自分のための香りを、いちばん近くに。
+                            </div>
                         </div>
-                        <h4 class="scene-title">■手首に</h4>
-                        <p class="scene-description">
-                            動くたびに、香りがふわりと立ちのぼる。
-                            自分のための香りを、いちばん近くに。
-                        </p>
+                        <h4 class="scene-title">手首に</h4>
                     </div>
                     
-                    <div class="scene-card">
-                        <div class="scene-image">
-                            <img src="./images/首.jpeg" alt="首につける">
+                    <div class="scene-card scene-card-neck">
+                        <div class="scene-image scene-image-bg" style="background-image: url('./images/首.jpeg');">
+                            <div class="scene-description-overlay">
+                                すれ違いざまに、そっと印象を残す。<br>やさしく香りを纏う定番のポイント。
+                            </div>
                         </div>
-                        <h4 class="scene-title">■ 首元に</h4>
-                        <p class="scene-description">
-                            すれ違いざまに、そっと印象を残す。
-                            やさしく香りを纏う定番のポイント。
-                        </p>
+                        <h4 class="scene-title">首元に</h4>
                     </div>
                     
-                    <div class="scene-card">
-                        <div class="scene-image">
-                            <img src="./images/足首.jpeg" alt="足首につける">
+                    <div class="scene-card scene-card-ankle">
+                        <div class="scene-image scene-image-bg" style="background-image: url('./images/足首.jpeg');">
+                            <div class="scene-description-overlay">
+                                さりげなく仕込んだ香りが、<br>歩くたび、空気に余韻を残す。
+                            </div>
                         </div>
-                        <h4 class="scene-title">■ 足首に</h4>
-                        <p class="scene-description">
-                            さりげなく仕込んだ香りが、
-                            歩くたび、空気に余韻を残す。
-                        </p>
+                        <h4 class="scene-title">足首に</h4>
                     </div>
                 </div>
             </div>
