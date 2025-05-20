@@ -902,6 +902,9 @@
             font-size: 1.6rem;
             margin-bottom: 20px;
             line-height: 1.3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         /* CTA内の説明文の調整 */
@@ -915,6 +918,7 @@
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 20px;
+            text-align: right;
         }
         
         .cta-features {
@@ -1426,6 +1430,23 @@
             font-weight: bold;
             margin: 0 3px;
         }
+        .circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;  /* 円形にする */
+            position: relative;  /* 基準値とする */
+            overflow: hidden;    /* はみ出た部分を非表示 */
+        }
+
+        .circle img {
+            position: absolute;  /* 相対位置に指定 */
+            top: -10px;
+            right: -40px;
+            
+            width: auto;
+            height: 300%;
+            object-fit: cover;   /* 画像の表示サイズを調整 ※IE非対応 */
+        }
 
         /* レスポンシブ対応強化 */
         @media (max-width: 992px) {
@@ -1462,7 +1483,7 @@
             
             .cta-text, 
             .cta-form {
-                padding: 25px;
+                padding: 20px;
             }
             
             .limited-stock {
@@ -1488,6 +1509,14 @@
         img {
             /* filter: grayscale(100%); */
             transition: all 0.3s ease;
+        }
+        .hero-top{
+            border: solid 3px;
+            width: 60%;
+            padding: 5px;
+            margin: 0 auto 30px;
+            border-color: var(--main-black);
+            text-align: center;
         }
 
         /* img:hover {
@@ -1528,6 +1557,46 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        .pyramid-description {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 0 30px 20px 30px;
+            font-size: 1.05rem;
+        }
+        .pyramid-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-weight: 500;
+        }
+        .pyramid-title {
+            min-width: 60px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .pyramid-row.top .pyramid-title {
+            color: #D4AF37; /* ゴールド */
+        }
+        .pyramid-row.middle .pyramid-title {
+            color: #8A6BBE; /* パープル */
+        }
+        .pyramid-row.base .pyramid-title {
+            color: #333; /* ブラック/グレー */
+        }
+        @media (min-width: 600px) {
+            .pyramid-description {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            .pyramid-row {
+                flex-direction: column;
+                align-items: flex-start;
+                min-width: 180px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1554,7 +1623,8 @@
     <!-- インフルエンサーコラボセクション -->
     <section class="influencer-collab">
         <div class="container">
-            <h1 class="hero-title">成瀬愛里 監修 <br class="br-sp">Lumiere Perfume</h1>
+            <div class="hero-top">完全数量限定</div>
+            <h1 class="hero-title">成瀬愛里 監修 <br class="br-sp">Lumiere Parfume</h1>
             <h2 class="hero-subtitle">9000万通り以上の組み合わせから<br>
                 心惹かれる香りだけを厳選して調香</h2>
             <!-- <p class="hero-description">あなただけの物語を紡ぐ特別な香りを。有名インフルエンサーが厳選した貴重な香りで、日常に特別な瞬間を。</p> -->
@@ -1583,7 +1653,7 @@
                             甘すぎず、でもちゃんと可愛くて、
                             ふわっと軽やかで、どこか芯のある香り。
                             そんな"自分らしさ"を大切にしたくて、
-                            300種類以上の香料を実際に嗅ぎ分けながら選びました。
+                            66種類以上の香料を実際に嗅ぎ分けながら選びました。
                             最初に広がる果実のやさしさ、花の清潔感、そして最後に残る温かい甘さ。
                             朝の気分を整えたいときも、夜にほっとしたいときも、すっと寄り添ってくれる香りです。自分のために纏いたくなる、そんな香りになったと思います。
                         </p>
@@ -1595,13 +1665,13 @@
                                 <p class="photo-caption">香料の選定</p>
                             </div>
                             <div class="journey-photo">
+                                <img src="images/select.jpeg" alt="選んだ香りを紙に記入">
+                                <p class="photo-caption">選んだ香りを紙に記入</p>
+                            </div>
+                            <div class="journey-photo">
                                 <img src="images/micro.jpeg" alt="マイクロチューブに香料を入れているシーン">
                                 <!-- style="filter: grayscale(100%);" -->
                                 <p class="photo-caption">マイクロチューブに香料を入れる</p>
-                            </div>
-                            <div class="journey-photo">
-                                <img src="images/select.jpeg" alt="選んだ香りを紙に記入">
-                                <p class="photo-caption">選んだ香りを紙に記入</p>
                             </div>
                             <div class="journey-photo">
                                 <img src="images/ムエットを持って香をチェック.jpeg" alt="ムエットを持って香りをチェック">
@@ -1625,6 +1695,8 @@
                             <span class="fragrance-item">すずらん</span>
                             <span class="fragrance-item">バニラビーンズ</span>
                             <span class="fragrance-item">ハニー</span>
+                            <span class="fragrance-item">シークレット</span>
+                            <span class="fragrance-item">シークレット</span>
                         </div>
                     </div>
                     
@@ -1634,9 +1706,26 @@
                         </p>
                     </div>
                 </div>
+                
                 <div class="image-container">
-                    <img src="images/piramid-Photoroom.png" alt="piramid" style="width: 100%; margin-left: 0; padding: 30px 5px;">
+                    <div></div>
+                    <img src="images/piramid_img-Photoroom.png" alt="piramid" style="width: 100%; margin-left: 0; padding: 30px;">
+                    <div class="pyramid-description">
+                        <div class="pyramid-row top">
+                            <span class="pyramid-title">トップ</span>
+                            <span>第一印象となる重要な要素<br>軽やかで明るい印象を与える</span>
+                        </div>
+                        <div class="pyramid-row middle">
+                            <span class="pyramid-title">ミドル</span>
+                            <span>香水のメインとなる香り<br>香りの調和を保つ大切な役割を担当</span>
+                        </div>
+                        <div class="pyramid-row base">
+                            <span class="pyramid-title">ベース</span>
+                            <span>香りの余韻や深み、持続性を支える土台となる香り</span>
+                        </div>
+                    </div>
                 </div>
+                <!-- ここまで -->
             </div>
             
             <!-- 使用シーン追加 -->
@@ -1842,11 +1931,11 @@
                 </div>
                 <div class="benefit-card-effect">
                     <div class="benefit-icon">
-                        <img src="images/ローズ.jpg" alt="睡眠">
+                        <img src="images/ジャスミン.jpg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">ローズ</h3>
+                    <h3 class="benefit-title">ジャスミン</h3>
                     <p class="benefit-description">
-                        気品ある華やかさが、女性らしさをそっと引き立ててくれます。
+                        透明感のあるフローラルが、心に静けさと深呼吸を。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -1855,11 +1944,11 @@
                 </div>
                 <div class="benefit-card-effect">
                     <div class="benefit-icon">
-                        <img src="images/ジャスミン.jpg" alt="睡眠">
+                        <img src="images/ローズ.jpg" alt="睡眠">
                     </div>
-                    <h3 class="benefit-title">ジャスミン</h3>
+                    <h3 class="benefit-title">ローズ</h3>
                     <p class="benefit-description">
-                        透明感のあるフローラルが、心に静けさと深呼吸を。
+                        気品ある華やかさが、女性らしさをそっと引き立ててくれます。
                     </p>
                     <!-- <div class="benefit-stat">
                         <span class="stat-number">92%</span>
@@ -2026,7 +2115,9 @@
                     <!-- <span class="limited-stock">
                         1000個限定</span> -->
                     <!-- <h3 class="cta-heading">成瀬愛里が厳選した<br class="br-sp">香水を購入できるのはここだけ！</h3> -->
-                    <h3 class="cta-heading">最後に<br>お伝えしたいこと</h3>
+                    <h3 class="cta-heading">
+                        <div class="circle"><img src="images/TOP.jpeg" alt="長方形の画像"></div>
+                        最後に<br>お伝えしたいこと</h3>
                     <p class="cta-description">
                         この香りは、「誰かのため」ではなく「わたしのため」に選びました。
                         気分を整えたい朝も、リラックスしたい夜も、
@@ -2069,8 +2160,8 @@
                     
                     <div class="price-container">
                         <span class="limited-stock">ご購入はこちら</span>
-                        <img src="/images/perfume.jpeg" alt="perfume" style="width: 100%; height: auto; margin: 15px 0;">
-                            Lumiere Parufam limited edition by Naruse Airi<br>
+                        <img src="images/perfume.jpeg" alt="perfume" style="width: 100%; height: auto; margin: 15px 0;">
+                            Lumiere Parfum limited edition by Naruse Airi<br>
                             
                         <span class="current-price">50ml／￥9,880（税込・送料込）</span>
                     </div>
@@ -2079,7 +2170,7 @@
                     </div>
                     <div class="notice-text">
                         ※発送について<br>
-                        ご注文から3営業日以内に発送いたします。<br>
+                        ご注文から1〜3営業日以内に発送いたします。<br>
                         日時指定はご利用いただけませんので、あらかじめご了承ください。<br><br>
                         
                         ※ご注意事項<br>
